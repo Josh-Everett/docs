@@ -46,6 +46,8 @@ Adjust the `runAfter` dependencies and parameter values to match your pipeline.
         - "false"
 ----
 
+NOTE: In this example, `image-url` and `image-digest` are parameters of the `pickle-scan` task, and their values come from the results of the build task. The `image-url` value is the output image of the build and normally includes a tag. These are not the `image-url` and `image-digest` parameters that {ProductName} adds to an integration PipelineRun, where `image-url` is the repository without a tag. See xref:testing:integration/creating.adoc#data-injected-into-the-pipelinerun-of-the-integration-test[Data injected into the PipelineRun of the integration test].
+
 The task produces a xref:testing:integration/standardized-outputs.adoc[TEST_OUTPUT] result that summarizes the outcome.
 By default it also attaches a pickle scan report to the image under test.
 
